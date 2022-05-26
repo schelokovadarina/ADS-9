@@ -4,7 +4,7 @@
 template <typename T>
 class BST {
 public:
-struct Node {
+    struct Node {
     T value;
     int count;
     Node* left;
@@ -12,7 +12,7 @@ struct Node {
 };
 
 private:
-Node* root;
+    Node* root;
 Node* addNode(Node* root, const T& val) {
     if (root == nullptr) {
         root = new Node;
@@ -63,4 +63,3 @@ int height() {
 }
 };
 #endif  // INCLUDE_BST_H_
-
