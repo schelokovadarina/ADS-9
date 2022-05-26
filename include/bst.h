@@ -49,8 +49,8 @@ if (root == nullptr) {
 return 0;
 }
 else {
-L = heightTree(root->left);
-R = heightTree(root->right);
+int L = heightTree(root->left);
+int R = heightTree(root->right);
 }
 if (L > R) {
 return L + 1;
