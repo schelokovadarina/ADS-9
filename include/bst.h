@@ -51,7 +51,7 @@ return L + 1;
 return R + 1;
 }
 }
-
+  
 public:
 BST() :root(nullptr) {}
 int search(const T& val) {
