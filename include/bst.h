@@ -3,13 +3,13 @@
 #define INCLUDE_BST_H_
 template <typename T>
 class BST {
- public: 
- struct Node {
+public: 
+    struct Node {
     T value;
     int count;
     Node* left;
-    Node* right;
-};
+    Node* right; 
+    };
 
  private:
 Node* root;
