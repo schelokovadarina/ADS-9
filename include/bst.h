@@ -3,15 +3,15 @@
 #define INCLUDE_BST_H_
 template <typename T>
 class BST {
-public: 
-    struct Node {
+public:
+struct Node {
     T value;
     int count;
     Node* left;
-    Node* right; 
-    };
+    Node* right;
+};
 
- private:
+private:
 Node* root;
 Node* addNode(Node* root, const T& val) {
     if (root == nullptr) {
@@ -53,13 +53,14 @@ int heightTree(Node* root) {
     }
 }
 
- public:
-    BST() :root(nullptr) {}
-    int search(const T & val) {
-        return searchNode(root, val);
-    }
-    int height() {
-        return heightTree(root) - 1;
-    }
+public:
+BST() :root(nullptr) {}
+int search(const T& val) {
+    return searchNode(root, val);
+}
+int height() {
+    return heightTree(root) - 1;
+}
 };
 #endif  // INCLUDE_BST_H_
+
