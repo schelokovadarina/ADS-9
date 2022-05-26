@@ -7,11 +7,11 @@
 
 BST<std::string> makeTree(const char* filename) {
 // поместите сюда свой код
-BST <std::string> tree;
+BST<std::string>tree;
 std::string w = "";
 std::ifstream file(filename);
 if (!file) {
-throw std::string("Error opening for reading ");
+throw std::string("Error opening for reading");
 return tree;
 }
 while (!file.eof()) {
@@ -31,4 +31,4 @@ else {
 }
 file.close();
 return tree;
-};
+}
