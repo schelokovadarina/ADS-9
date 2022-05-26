@@ -18,14 +18,12 @@ root = new Node;
 root->value = val;
 root->count = 1;
 root->left = root->right = nullptr;
-}
-else if (val < root->value) {
+} else if (val < root->value) {
 root->left = addNode(root->left, val);
 }
 else if (val > root->value) {
 root->right = addNode(root->right, val);
-}
-else {
+} else {
 root->count++;
 }
 return root;
@@ -33,29 +31,23 @@ return root;
 int searchNode(Node* root, T& val) {
 if (root == nullptr) {
 return 0;
-}
-else if (root->value == val) {
+} else if (root->value == val) {
 return root->count;
-}
-else if (root->value > val) {
+} else if (root->value > val) {
 return searchNode(root->left, val);
-}
-else {
+} else {
 return searchNode(root->right, val);
 }
 }
 int heightTree(Node* root) {
 if (root == nullptr) {
 return 0;
-}
-else {
+} else {
 int L = heightTree(root->left);
 int R = heightTree(root->right);
-}
 if (L > R) {
 return L + 1;
-}
-else {
+} else {
 return R + 1;
 }
 }
@@ -67,8 +59,7 @@ return searchNode(root, val);
 }
 int height() {
 return heightTree(root) - 1;
-}
-   
-    
+}    
 };
 #endif  // INCLUDE_BST_H_
+
