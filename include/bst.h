@@ -1,3 +1,4 @@
+// Copyright 2021 NNTU-CS
 #ifndef INCLUDE_BST_H_
 #define INCLUDE_BST_H_
 template <typename T>
@@ -10,9 +11,9 @@ struct Node {
     Node* right;
 };
 
-private:
+ private:
 Node* root;
-Node* addNode(Node* root, T& val) {
+Node* addNode(Node* root,const T& val) {
     if (root == nullptr) {
         root = new Node;
         root->value = val;
@@ -27,7 +28,7 @@ Node* addNode(Node* root, T& val) {
     }
     return root;
 }
-int searchNode(Node* root, T& val) {
+int searchNode(Node* root,const T& val) {
     if (root == nullptr) {
         return 0;
     } else if (root->value == val) {
@@ -52,7 +53,7 @@ int heightTree(Node* root) {
     }
 }
 
-public:
+ public:
     BST() :root(nullptr) {}
     int search(const T & val) {
         return searchNode(root, val);
