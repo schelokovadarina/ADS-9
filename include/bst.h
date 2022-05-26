@@ -4,69 +4,71 @@ template <typename T>
 class BST {
 public:
 struct Node {
-	T value;
-	int count;
-	Node* left;
-	Node* right;
+T value;
+int count;
+Node* left;
+Node* right;
 };
+
 private:
 Node* root;
-Node* addNode(Node*root,T& val){
-	if (root==nullptr){
-		root = new Node;  
-        root->value = val;
-        root->count = 1;
-        root->left = root->right = nullptr;
-        }
-        else if (val < root->value) {
-            root->left = addNode(root->left, val);
-        }
-        else if (val> root->value) {
-            root->right = addNode(root->right, val);
-        }
-        else {
-            root->count++;
-        }
-        return root;
-    }
-
-int searchNode(Node* root, T& val;) {
-    if (root == nullptr) {
-        return 0;
-    }
-    else if (root->value == val) {
-        return root->count;
-    }
-    else if (root->value > val) {
-        return searchNode(root->left, val);
-    }
-    else {
-        return searchNode(root->right, val);
-    }
+Node* addNode(Node* root, T& val) {
+if (root == nullptr) {
+root = new Node;
+root->value = val;
+root->count = 1;
+root->left = root->right = nullptr;
 }
-
+else if (val < root->value) {
+root->left = addNode(root->left, val);
+}
+else if (val > root->value) {
+root->right = addNode(root->right, val);
+}
+else {
+root->count++;
+}
+return root;
+}
+int searchNode(Node* root, T& val) {
+if (root == nullptr) {
+return 0;
+}
+else if (root->value == val) {
+return root->count;
+}
+else if (root->value > val) {
+return searchNode(root->left, val);
+}
+else {
+return searchNode(root->right, val);
+}
+}
 int heightTree(Node* root) {
-    if (root == nullptr)
-        return 0;
-    else {
-        int L = heightTree(root->left);
-        int R = heightTree(root->right);
-        if (L > R) {
-            return L + 1;
-        }
-        else {
-            return R + 1;
-        }
+if (root == nullptr) {
+return 0;
+}
+else {
+L = heightTree(root->left);
+R = heightTree(root->right);
+}
+if (L > R) {
+return L + 1;
+}
+else {
+return R + 1;
+}
 }
 
 public:
-    int search(const T& val) {
-        return searchNode(root,val);
-    }
-    int height() {
-        return heightTree(root) - 1;
-    }
-    BST() :root(nullptr) {}
-    ~BST() {}
+BST() :root(nullptr) {}
+int search(const T& val) {
+return searchNode(root, val);
+}
+int height() {
+return heightTree(root) - 1;
+}
+   
+    
 };
 #endif  // INCLUDE_BST_H_
