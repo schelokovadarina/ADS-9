@@ -3,53 +3,56 @@
 #define INCLUDE_BST_H_
 template <typename T>
 class BST {
+template <typename T>
+class BST {
  public:
-     struct Node {
-        T value;
-        int count;
-        Node* left;
-        Node* right;
-     };
+         struct Node {
+            T value;
+            int count;
+            Node* left;
+            Node* right;
+          };
 
  private:
-     Node* root;
-    Node* addNode(Node *root, const T& val) {
+        Node* root;
+Node* addNode(Node* root, const T& val) {
     if (root == nullptr) {
         root = new Node;
         root->value = val;
         root->count = 1;
         root->left = root->right = nullptr;
-    } else if (val < root->value) {
-        root->left = addNode(root->left, val);
     } else if (val > root->value) {
+        root->left = addNode(root->left, val);
+    } else if (val < root->value) {
         root->right = addNode(root->right, val);
     } else {
         root->count++;
     }
     return root;
 }
+
 int searchNode(Node* root, const T& val) {
     if (root == nullptr) {
         return 0;
     } else if (root->value == val) {
         return root->count;
-    } else if (root->value > val) {
+    } else if (root->value < val) {
         return searchNode(root->left, val);
     } else {
         return searchNode(root->right, val);
     }
 }
-int depthTree(Node *root) {
+int depthTree(Node* root) {
     if (root == nullptr) {
         return 0;
     } else {
-        int L = depthTree(root->left);
-        int R = depthTree(root->right);
-        if (L > R) {
-            return L + 1;
-        } else {
-            return R + 1;
-        }
+        L = depthTree(root->left);
+        R = depthTree(root->right);
+    }
+    if (L > R) {
+        return L + 1;
+    } else {
+        return R + 1;
     }
 }
 
@@ -66,3 +69,4 @@ int depthTree(Node *root) {
     }
 };
 #endif  // INCLUDE_BST_H_
+
