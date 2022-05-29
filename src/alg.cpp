@@ -4,6 +4,7 @@
 #include  <locale>
 #include  <cstdlib>
 #include  "bst.h"
+#include <string>
 
 BST<std::string> makeTree(const char* filename) {
 // поместите сюда свой код
@@ -13,7 +14,7 @@ if (!file) {
 std::cout << "Error opening for reading" << std::endl;
 return Tree;
 }
-char word = "";
+string word = "";
 while (!file.eof()) {
 char character = file.get();
 if ('A' <= character && character <= 'Z') {
