@@ -13,8 +13,8 @@ if (!file) {
 std::cout << "Error opening for reading" << std::endl;
 return Tree;
 }
-const std::string word = "";
 while (!file.eof()) {
+std::string word = "";
 char character = file.get();
 if ('A' <= character && character <= 'Z') {
     character = character + ('a' - 'A');
