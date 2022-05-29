@@ -11,24 +11,22 @@ BST<std::string> Tree;
 std::string word = "";
 std::ifstream file(filename);
 if (!file) {
-throw std::string("Error opening for reading ");
-return Tree;
+    std::cout << "Error opening for reading" << std::endl;
+    return Tree;
 }
 while (!file.eof()) {
-char character = file.get();
-if (('A' <= character && character <= 'Z') || ('a' <= character && character <= 'z')) {
+    char character = file.get();
     if ('A' <= character && character <= 'Z') {
-        character += ('a' - 'A');
+        character = character + ('a' - 'A');
     }
     if ('a' <= character && character <= 'z') {
         word += character;
-    }
-    else {
+    } else {
         Tree.add(word);
         word = "";
     }
 }
-}
 file.close();
 return Tree;
 }
+
