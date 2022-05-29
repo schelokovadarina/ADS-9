@@ -3,8 +3,6 @@
 #define INCLUDE_BST_H_
 template <typename T>
 class BST {
-template <typename T>
-class BST {
  public:
          struct Node {
             T value;
@@ -69,4 +67,3 @@ int depthTree(Node* root) {
     }
 };
 #endif  // INCLUDE_BST_H_
-
