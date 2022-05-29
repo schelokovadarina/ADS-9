@@ -26,7 +26,6 @@ while (!file.eof()) {
         word = "";
     }
 }
-    
 file.close();
 return Tree;
 }
