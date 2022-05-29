@@ -22,8 +22,10 @@ if ('A' <= character && character <= 'Z') {
 if ('a' <= character && character <= 'z') {
     word += character;
 } else {
-    Tree.add(word);
-    word = "";
+if (word != "") {
+Tree.add(word);
+word = "";
+}
 }
 }
 file.close();
