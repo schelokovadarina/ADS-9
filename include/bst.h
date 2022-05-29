@@ -3,16 +3,16 @@
 #define INCLUDE_BST_H_
 template <typename T>
 class BST {
-public:
-    struct Node {
+ public: 
+     struct Node {
         T value;
         int count;
         Node* left;
         Node* right;
-    };
+     };
 
-private:
-    Node* root;
+ private:
+     Node* root;
     Node* addNode(Node* root, const T& val) {
     if (root == nullptr) {
         root = new Node;
@@ -39,12 +39,12 @@ int searchNode(Node* root, const T& val) {
         return searchNode(root->right, val);
     }
 }
-int heightTree(Node* root) {
+int depthTree(Node* root) {
     if (root == nullptr) {
         return 0;
     } else {
-        int L = heightTree(root->left);
-        int R = heightTree(root->right);
+        int L = depthTree(root->left);
+        int R = depthTree(root->right);
         if (L > R) {
             return L + 1;
         } else {
@@ -53,16 +53,16 @@ int heightTree(Node* root) {
     }
 }
 
-public:
-    BST() :root(nullptr) {}
+ public:
+     BST() :root(nullptr) {}
     void add(const T& val) {
         root = addNode(root, val);
     }
     int search(const T& val) {
         return searchNode(root, val);
     }
-    int height() {
-        return heightTree(root) - 1;
+    int depth() {
+        return depthTree(root) - 1;
     }
 };
 #endif  // INCLUDE_BST_H_
