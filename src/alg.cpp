@@ -14,8 +14,8 @@ throw std::string("Error opening for reading ");
 return tree;
 }
 while (!file.eof()) {
-std::string w = "";
 char character = file.get();
+std::string w = "";
 if (('A' <= character && character <= 'Z') || ('a' <= character && character <= 'z')) {
     if ('A' <= character && character <= 'Z') {
         character += ('a' - 'A');
