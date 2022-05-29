@@ -4,12 +4,12 @@
 template <typename T>
 class BST {
  private:
- struct Node {
-    T value;
-    int count;
-    Node* left;
-    Node* right;
-};
+     struct Node {
+         T value;
+         int count;
+         Node* left;
+         Node* right;
+     };
 
 Node* root;
 Node* addNode(Node* root, const T& val) {
