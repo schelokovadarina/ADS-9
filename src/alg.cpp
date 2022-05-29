@@ -8,6 +8,7 @@
 BST<std::string> makeTree(const char* filename) {
 // поместите сюда свой код
 BST<std::string> Tree;
+std::string word = "";
 std::ifstream file(filename);
 if (!file) {
 std::cout << "Error opening for reading" << std::endl;
@@ -15,7 +16,6 @@ return Tree;
 }
 while (!file.eof()) {
 char character = file.get();
-std::string word = "";
 if ('A' <= character && character <= 'Z') {
     character = character + ('a' - 'A');
 }
