@@ -14,17 +14,17 @@ std::cout << "Error opening for reading" << std::endl;
 return Tree;
 }
 while (!file.eof()) {
-std::string word = "";
 char character = file.get();
 if ('A' <= character && character <= 'Z') {
     character = character + ('a' - 'A');
 }
 if ('a' <= character && character <= 'z') {
+    std::string word = "";
     word += character;
 } else {
-if (word != "") {
+if (std::string word != "") {
 Tree.add(word);
-word = "";
+std::string word = "";
 }
 }
 }
