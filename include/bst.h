@@ -3,16 +3,15 @@
 #define INCLUDE_BST_H_
 template <typename T>
 class BST {
- public:
-         struct Node {
-            T value;
-            int count;
-            Node* left;
-            Node* right;
-         };
-
  private:
-        Node* root;
+ struct Node {
+    T value;
+    int count;
+    Node* left;
+    Node* right;
+};
+
+Node* root;
 Node* addNode(Node* root, const T& val) {
     if (root == nullptr) {
         root = new Node;
@@ -41,7 +40,7 @@ int searchNode(Node* root, const T& val) {
     }
 }
 int depthTree(Node* root) {
-    int L = 0; int R = 0;
+    int L = 0, R = 0;
     if (root == nullptr) {
         return 0;
     } else {
@@ -56,15 +55,15 @@ int depthTree(Node* root) {
 }
 
  public:
-     BST() :root(nullptr) {}
-    void add(const T& val) {
-        root = addNode(root, val);
-    }
-    int search(const T& val) {
-        return searchNode(root, val);
-    }
-    int depth() {
-        return depthTree(root) - 1;
-    }
+    BST() :root(nullptr) {}
+void add(const T& val) {
+    root = addNode(root, val);
+}
+int search(const T& val) {
+    return searchNode(root, val);
+}
+int depth() {
+    return depthTree(root)- 1;
+}
 };
 #endif  // INCLUDE_BST_H_
