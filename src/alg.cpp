@@ -8,7 +8,6 @@
 BST<std::string> makeTree(const char* filename) {
 // поместите сюда свой код
 BST<std::string> tree;
-std::string w = "";
 std::ifstream file(filename);
 if (!file) {
 throw std::string("Error opening for reading ");
@@ -32,3 +31,4 @@ if (('A' <= character && character <= 'Z') || ('a' <= character && character <= 
 file.close();
 return tree;
 }
+
