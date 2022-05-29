@@ -7,28 +7,28 @@
 
 BST<std::string> makeTree(const char* filename) {
 // поместите сюда свой код
-BST<std::string> tree;
+BST<std::string> Tree;
+std::string word = "";
 std::ifstream file(filename);
 if (!file) {
 throw std::string("Error opening for reading ");
-return tree;
+return Tree;
 }
 while (!file.eof()) {
 char character = file.get();
-std::string w = "";
 if (('A' <= character && character <= 'Z') || ('a' <= character && character <= 'z')) {
     if ('A' <= character && character <= 'Z') {
         character += ('a' - 'A');
     }
     if ('a' <= character && character <= 'z') {
-        w += character;
-    } else {
-        tree.add(w);
-        w = "";
+        word += character;
+    }
+    else {
+        Tree.add(word);
+        word = "";
     }
 }
 }
 file.close();
-return tree;
+return Tree;
 }
-
